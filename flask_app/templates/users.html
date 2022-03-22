@@ -40,7 +40,7 @@
             <th scope="row"><a class="text-dark text-decoration-none" href="/read_one/{{ user.id }}">{{ user.first_name
                 }} {{ user.last_name }}</a></th>
             <td scope="row">{{ user.email }}</td>
-            <td scope="row">{{ user.created_at }}</td>
+            <td scope="row">{{ user.created_at.strftime("%B %d, %Y at %r") }}</td>
             <td>
               <a class="text-info" href="/read_one/{{ user.id }}">view</a>
               <span>|</span>

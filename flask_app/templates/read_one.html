@@ -14,7 +14,6 @@
   <main class="container d-flex flex-wrap mt-4 justify-content-center">
     <div class="container bg-warning text-dark rounded-3 w-50">
       <h1 class="text-left mt-2">{{ one_user.first_name }} {{ one_user.last_name }}</h1>
-      <a class="btn btn-primary text-light float-end mb-3" href="/users">Home</a>
 
     </div>
     <p class="w-100"></p>
@@ -43,7 +42,7 @@
           </tr>
           <tr>
             <th scope="row" class="text-light text-end">Created on </th>
-            <td class="text-info">{{ one_user.created_at }}</td>
+            <td class="text-info">{{ one_user.created_at.strftime("%B %d, %Y at %r") }}</td>
           </tr>
           <tr>
             <th scope="row" class="text-light text-end"> </th>
@@ -51,7 +50,7 @@
           </tr>
           <tr>
             <th scope="row" class="text-light text-end">Last updated on </th>
-            <td class="text-info">{{ one_user.updated_at }}</td>
+            <td class="text-info">{{ one_user.updated_at.strftime("%B %d, %Y at %r") }}</td>
           </tr>
         </tbody>
       </table>
@@ -61,9 +60,10 @@
 
     <a class="btn btn-warning text-black float-start mt-5 mb-5 me-4" href="/update_user/{{ one_user.id }}">Edit User</a>
     <a class="btn btn-danger text-black float-end mt-5 mb-5 me-4" href="/confirm_delete/{{ one_user.id }}">Delete
-      User</a>
+      <a class="btn btn-primary text-light float-end mt-5 mb-5 me-4" href="/users">Home</a>
 
-    <p class="w-100"></p>
+
+      <p class="w-100"></p>
 
   </main>
   <!-- end -- MAIN -->
